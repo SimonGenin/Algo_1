@@ -71,6 +71,11 @@ public class Percolation {
 
         }
 
+        for (int i = 0; i < grid.length; i++) {
+            System.out.print(grid[i] + " ");
+        }
+        System.out.println();
+
         return false;
     }
 
@@ -90,7 +95,7 @@ public class Percolation {
             siteIndexI = StdRandom.uniform(1, 21);
             siteIndexJ = StdRandom.uniform(1, 21);
 
-            if (p.isOpen(siteIndexI, siteIndexJ)) p.open(siteIndexI, siteIndexJ);
+            if (!p.isOpen(siteIndexI, siteIndexJ)) p.open(siteIndexI, siteIndexJ);
 
             if (p.percolates()) break;
 
